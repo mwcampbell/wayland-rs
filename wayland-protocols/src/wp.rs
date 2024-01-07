@@ -3,6 +3,21 @@
 #![cfg_attr(rustfmt, rustfmt_skip)]
 
 #[cfg(feature = "staging")]
+pub mod accessibility {
+    //! This protocol extension allows clients to expose the content
+    //! and structure required for accessibility, and to receive
+    //! action requests from accessibility clients.
+
+    #[allow(missing_docs)]
+    pub mod v1 {
+        wayland_protocol!(
+            "./protocols/staging/accessibility/accessibility-v1.xml",
+            []
+        );
+    }
+}
+
+#[cfg(feature = "staging")]
 pub mod content_type {
     //! This protocol allows a client to describe the kind of content a surface
     //! will display, to allow the compositor to optimize its behavior for it.
