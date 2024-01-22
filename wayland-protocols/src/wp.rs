@@ -3,17 +3,14 @@
 #![cfg_attr(rustfmt, rustfmt_skip)]
 
 #[cfg(feature = "staging")]
-pub mod accessibility {
+pub mod a11y {
     //! This protocol extension allows clients to expose the content
     //! and structure required for accessibility, and to receive
     //! action requests from accessibility clients.
 
     #[allow(missing_docs)]
     pub mod v1 {
-        wayland_protocol!(
-            "./protocols/staging/accessibility/accessibility-v1.xml",
-            []
-        );
+        wayland_protocol!("./protocols/staging/a11y/a11y-v1.xml", []);
     }
 }
 
