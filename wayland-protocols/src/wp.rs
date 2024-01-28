@@ -15,6 +15,19 @@ pub mod a11y {
 }
 
 #[cfg(feature = "staging")]
+pub mod a11y_consumer {
+    //! This protocol extension allows applications such as screen readers,
+    //! referred to here as accessibility consumers, to receive accessibility
+    //! trees associated with surfaces and send action requests to those
+    //! surfaces.
+
+    #[allow(missing_docs)]
+    pub mod v1 {
+        wayland_protocol!("./protocols/staging/a11y-consumer/a11y-consumer-v1.xml", []);
+    }
+}
+
+#[cfg(feature = "staging")]
 pub mod content_type {
     //! This protocol allows a client to describe the kind of content a surface
     //! will display, to allow the compositor to optimize its behavior for it.
